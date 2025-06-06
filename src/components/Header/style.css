@@ -1,0 +1,116 @@
+.custom-header {
+  background-color: #1c1c1e;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 16px;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #333;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+}
+
+.header-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  flex: 2;
+  /* display: flex;
+  justify-content: center; */
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-box {
+  background-color: #2c2c2e;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  min-width: 280px;
+  gap: 8px;
+  color: #aaa;
+}
+
+.search-box input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  font-size: 14px;
+}
+
+.search-icon {
+  font-size: 14px;
+}
+
+.shortcut {
+  background-color: #3a3a3c;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.header-icon {
+  font-size: 16px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.notification-icon {
+  position: relative;
+  font-size: 16px;
+  cursor: pointer;
+  color: #ccc;
+}
+
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -6px;
+  background-color: #f56565;
+  color: white;
+  font-size: 10px;
+  border-radius: 9999px;
+  padding: 1px 5px;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2c2c2e;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.user-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+}
+
+.user-name {
+  font-size: 14px;
+  color: #fff;
+}

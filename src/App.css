@@ -1,0 +1,143 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f2f5;
+}
+.main-section {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 240px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar-title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.sidebar-nav button {
+  display: block;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.sidebar-nav .active {
+  font-weight: bold;
+  color: black;
+}
+
+.header {
+  background: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.search-input {
+  padding: 5px 10px;
+  width: 55%;
+  border-radius: 10px;
+  border: 1px solid #8a8a8a !important;
+  height: 30px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.reports-container {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.reports-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.reports-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tab-button {
+  padding: 5px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #eee;
+  cursor: pointer;
+}
+.tab-button.active {
+  background: black;
+  color: white;
+}
+.search-box {
+  padding: 5px 10px;
+  margin-left: auto;
+}
+.export-btn {
+  padding: 5px 15px;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.reports-table th,
+.reports-table td {
+  padding: 10px;
+  /* border: 1px solid #ccc; */
+}
+.reports-table th {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+.reports-table tr:hover {
+  background: #f9f9f9;
+}
+/* Full app layout */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Content area below header */
+.app-container {
+  display: flex;
+  flex: 1;
+  background-color: #f4f4f4;
+}
+
+/* Main content section */
+.main-content {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
