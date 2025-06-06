@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { data } from "../../data/stubdata";
+import { data } from "../../data/data";
 import {
     FaEye,
     FaRegCopy,
@@ -94,7 +94,6 @@ const Reports = () => {
     return (
         <>
             <ReportsHeader />
-
             <div className="reports-wrapper">
                 <div className="containers">
                     <div className="sub-container">
