@@ -6,31 +6,38 @@ const Header = () => {
     return (
         <header className="custom-header">
             <div className="header-left">
-                <h2 className="logo">HASS</h2>
+                <div className="logo">HASS</div>
             </div>
 
             <div className="header-center">
                 <div className="search-box">
-                    <FaSearch className="search-icon" />
+                    {/* <FaSearch className="search-icon" /> */}
+                    <img src="../../assets/search.png" className="header-icon" alt="" />
+
                     <input type="text" placeholder="Search" />
                     <span className="shortcut">⌘K</span>
                 </div>
             </div>
 
             <div className="header-right">
-                <FaInfoCircle className="header-icon" />
+                <div className="circle-icon">
+                    {/* <FaInfoCircle className="header-icon" /> */}
+                    <img src="../../assets/Icon.png" className="header-icon" alt="" />
+                </div>
                 <div className="notification-icon">
-                    <FaBell />
+                    {/* <FaBell /> */}
+                    <img src="../../assets/bell.png" className="header-icon" alt="" />
+
                     <span className="badge">2</span>
                 </div>
-                <FaCog className="header-icon" />
+                {/* <FaCog className="header-icon" /> */}
                 <div className="user-info">
+                    <span className="user-name">John Doe</span>
                     <img
                         src="https://i.pravatar.cc/30"
                         alt="User"
                         className="user-avatar"
                     />
-                    <span className="user-name">John Doe</span>
                 </div>
             </div>
         </header>

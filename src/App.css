@@ -47,21 +47,21 @@
 }
 .search-input {
   padding: 5px 10px;
-  width: 55%;
+  width: 200px;
   border-radius: 10px;
   border: 1px solid #8a8a8a !important;
   height: 30px;
 }
 
-.header-right {
+/* .header-right {
   display: flex;
   align-items: center;
   gap: 15px;
-}
+} */
 .user-avatar {
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  border-radius: 20%;
 }
 
 .reports-container {
@@ -98,7 +98,7 @@
 }
 .export-btn {
   padding: 5px 15px;
-  background: #000000;
+  background: #303030;
   color: white;
   border: none;
   border-radius: 5px;

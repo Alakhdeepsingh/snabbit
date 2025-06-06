@@ -15,7 +15,7 @@
 }
 
 .header-left {
-  flex: 1;
+  flex: 1.5;
   display: flex;
   align-items: center;
 }
@@ -31,17 +31,24 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   padding-right: 40px;
 }
 
 .logo {
   font-size: 20px;
   font-weight: bold;
+  width: 48px;
+  height: 32px;
+  /* font-family: Roboto; */
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: 0%;
 }
 
 .search-box {
-  background-color: #2c2c2e;
+  background-color: #303030 !important;
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -49,13 +56,37 @@
   min-width: 280px;
   gap: 8px;
   color: #aaa;
+  max-width: 480px;
+  border: 1px solid #5e5e5e;
+}
+
+.circle-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px; /* ya jitna radius chahiye ho */
+  /* padding: 8px; ya jo bhi spacing chahiye */
+  background-color: #303030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notification-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px; /* ya jitna radius chahiye ho */
+  /* padd ing: 8px; ya jo bhi spacing chahiye */
+  background-color: #303030;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-box input {
   background: transparent;
   border: none;
   outline: none;
-  color: #fff;
+  color: #b5b5b5;
   width: 100%;
   font-size: 14px;
 }
@@ -65,7 +96,7 @@
 }
 
 .shortcut {
-  background-color: #3a3a3c;
+  /* background-color: #3a3a3c; */
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 12px;
@@ -76,6 +107,8 @@
   font-size: 16px;
   cursor: pointer;
   color: #ccc;
+  width: 14px;
+  height: 14px;
 }
 
 .notification-icon {
@@ -87,8 +120,8 @@
 
 .badge {
   position: absolute;
-  top: -5px;
-  right: -6px;
+  top: 1px;
+  right: 1px;
   background-color: #f56565;
   color: white;
   font-size: 10px;
@@ -105,12 +138,12 @@
   padding: 4px 8px;
   border-radius: 8px;
 }
-
+/* 
 .user-avatar {
   width: 24px;
   height: 24px;
   border-radius: 9999px;
-}
+} */
 
 .user-name {
   font-size: 14px;

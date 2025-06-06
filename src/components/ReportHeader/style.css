@@ -1,6 +1,6 @@
 .report-header-wrapper {
-  padding: 20px 24px;
-  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 4px;
+  /* border-bottom: 1px solid #e5e7eb; */
   margin-top: 70px;
   border-radius: 10px;
 }
@@ -30,6 +30,12 @@
   font-size: 14px;
   color: #6b7280;
   margin-top: 4px;
+  font-family: Inter;
+  font-weight: 450;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  margin-left: 28px;
 }
 
 .reports-heading {
@@ -38,4 +44,5 @@
   font-size: 20px;
   line-height: 24px;
   letter-spacing: -0.2px;
+  color: #303030;
 }

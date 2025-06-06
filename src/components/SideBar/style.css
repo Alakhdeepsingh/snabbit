@@ -18,6 +18,18 @@
   margin: 0;
 }
 
+.sidebar-menu-texts {
+  color: #303030;
+  font-family: Inter;
+  font-weight: 550;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  width: 133px;
+  height: 20px;
+}
+
 .menu li {
   padding: 8px 12px;
   cursor: pointer;

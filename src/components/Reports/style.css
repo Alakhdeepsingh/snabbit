@@ -31,12 +31,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+}
+
+.reports-wrapper {
+  margin-top: 15px;
 }
 
 .tabs {
   display: inline-flex;
   border: 1px solid #ddd;
-  border-radius: 9999px; /* pill shape */
+  border-radius: 10px; /* pill shape */
   overflow: hidden;
   margin-right: 25px;
 }
@@ -48,7 +53,20 @@
   gap: 15px;
 }
 
+.filterisation {
+  font-family: Inter;
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  width: 32px;
+  height: 20px;
+  color: #303030;
+}
+
 .filter-sort-button {
+  width: 76px;
+  height: 32px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -59,6 +77,7 @@
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 0 0 1px #e5e5e5;
+  height: 30px;
 }
 
 .icon-stack {
@@ -84,6 +103,20 @@
   font-weight: 500;
   cursor: pointer;
   box-shadow: 0 0 0 1px #e5e5e5;
+  height: 30px;
+}
+
+.values-icons {
+  color: #000000d9;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0px;
+  /* text-decoration: underline; */
+  text-decoration-style: solid;
+  text-decoration-offset: 0%;
+  text-decoration-thickness: 0%;
 }
 
 .icon-stack {
@@ -107,7 +140,7 @@
 }
 
 .tab {
-  padding: 10px 20px;
+  padding: 0px 20px;
   border: none;
   background: transparent;
   color: #333;
@@ -121,7 +154,7 @@
 }
 
 .tab.active {
-  background-color: #f9f9f9;
+  background-color: #0000000d;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.08);
 }
 
@@ -178,26 +211,30 @@
 }
 
 .main-container {
-  display: flex; 
-  align-items: center; 
-  background-color: #f9f9f9; 
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
   border: 1px solid #ddd;
-  padding: 15px;
+  padding: 4px;
   border-radius: 5px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  border-top: none;
 }
 
 .content {
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 .arrow-container {
   display: flex;
   align-items: center;
-  margin-left: 15px; 
+  margin-left: 15px;
 }
 
 .arrow {
-  font-size: 20px; 
+  font-size: 20px;
   color: #999;
   cursor: pointer;
 }
@@ -215,41 +252,63 @@
   border: none;
   color: white;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease;
 }
 
-.export-btn:hover {
-  background-color: #0066cc;
+.exported {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #ffffff;
 }
 
 .reports-table {
   width: 100%;
   border-collapse: collapse;
   background-color: white;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   overflow: hidden;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-titles {
+  font-family: Inter;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  color: #616161;
+  height: 32px;
 }
 
 .container {
   display: flex;
   padding: 10px;
-  background-color: #f0f2f5; 
-  border-radius: 5px; 
+  background-color: #f0f2f5;
+  border-radius: 5px;
 }
 
 .tab {
-  padding: 8px 15px; 
-  margin-right: 10px; 
+  padding: 8px 15px;
+  /* margin-right: 10px; */
   cursor: pointer;
   font-family: Arial, sans-serif;
-  font-size: 14px; 
+  font-size: 14px;
   color: #333;
   border-radius: 4px;
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
+
+  font-family: Inter;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
 }
 
 .sub-container {
@@ -260,16 +319,26 @@
 }
 
 .tab:hover {
-  background-color: #e0e0e0;
+  background-color: #0000000d;
+  /* text-align: center;
+  vertical-align: middle;
+  display: flex; */
 }
 
 .tab.active {
-  background-color: #e0e0e0; 
-  font-weight: bold; 
-  color: #333; /
+  background-color: #0000000d;
+  font-weight: bold;
+  color: #303030;
+  font-family: Inter;
+  font-weight: 550;
+  font-size: 13px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
 }
 
-.reports-table th,
+/* .reports-table th, */
 .reports-table td {
   padding: 12px 16px;
   text-align: left;
@@ -278,7 +347,7 @@
 }
 
 .reports-table th {
-  background-color: #f3f4f6;
+  background-color: #f7f7f7;
   font-weight: 600;
   color: #374151;
   cursor: pointer;

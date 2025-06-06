@@ -120,7 +120,7 @@ const Reports = () => {
                                     className="filter-sort-button"
                                     onClick={() => setShowFilterOptions(!showFilterOptions)}
                                 >
-                                    <span>Filter</span>
+                                    <span className="filterisation">Filter</span>
                                     <span className="icon-stack">
                                         <FaChevronUp className="icon" />
                                         <FaChevronDown className="icon" />
@@ -178,7 +178,7 @@ const Reports = () => {
                                     className="filter-sort-button"
                                     onClick={() => setShowSortOptions(!showSortOptions)}
                                 >
-                                    <span>Sort</span>
+                                    <span className="filterisation">Sort</span>
                                     <span className="icon-stack">
                                         <FaChevronUp className="icon" />
                                         <FaChevronDown className="icon" />
@@ -234,7 +234,10 @@ const Reports = () => {
                                     className="search-input"
                                 />
                                 <button onClick={exportCSV} className="export-btn">
-                                    <HiOutlineDownload /> Export
+                                    {/* <HiOutlineDownload />  */}
+                                    <img src="../../assets/export.png" className="header-icon" alt="" />
+
+                                    <span className="exported">Export</span>
                                 </button>
                             </div>
                         </div>
@@ -244,7 +247,8 @@ const Reports = () => {
                         <thead>
                             <tr>
                                 {Object.keys(data[0]).map((key) => (
-                                    <th key={key} onClick={() => setSortBy(key)} style={{ cursor: "pointer" }}>
+                                    <th key={key} onClick={() => setSortBy(key)}
+                                        className="header-titles" style={{ cursor: "pointer" }}>
                                         {key}
                                         {sortBy === key && (
                                             <span style={{ marginLeft: "4px" }}>
@@ -261,7 +265,7 @@ const Reports = () => {
                             {sorted.map((row, i) => (
                                 <tr key={i}>
                                     {Object.values(row).map((val, j) => (
-                                        <td key={j}>{val}</td>
+                                        <td key={j} className="values-icons">{val}</td>
                                     ))}
                                     <td className="log-icons">
                                         <FaEye /> <FaRegCopy />
