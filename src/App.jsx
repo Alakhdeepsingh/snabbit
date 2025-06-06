@@ -1,15 +1,15 @@
 import React from "react";
-import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import Reports from "./components/Reports";
 import './App.css';
+import SideBar from "./components/Sidebar";
 
 const App = () => {
   return (
     <div className="app-wrapper">
       <Header />
       <div className="app-container">
-        <Sidebar />
+        <SideBar />
         <main className="main-content">
           <Reports />
         </main>
