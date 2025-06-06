@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "./components/Header";
 import Reports from "./components/Reports";
+import SideBar from "./components/SideBar";
 import './App.css';
-import SideBar from "./components/Sidebar";
 
 const App = () => {
   return (
