@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { data } from "../../data/stubdata";
-import { FaArrowLeft, FaEye, FaRegCopy, FaChevronUp, FaChevronDown } from "react-icons/fa";
+import {
+    FaEye,
+    FaRegCopy,
+    FaChevronUp,
+    FaChevronDown,
+} from "react-icons/fa";
 import { HiOutlineDownload } from "react-icons/hi";
 import "./style.css";
 import ReportsHeader from "../ReportHeader";
@@ -29,7 +34,7 @@ const filterByTimeRange = (items, filterType) => {
                 return itemDate >= oneYearAgo && itemDate <= now;
             }
             case "Custom":
-                return true; // Later you can implement custom range picker
+                return true; // Later implement custom range picker
             default:
                 return true;
         }
@@ -43,12 +48,28 @@ const Reports = () => {
     const [showFilterOptions, setShowFilterOptions] = useState(false);
     const [showSortOptions, setShowSortOptions] = useState(false);
 
-    const filtered = filterByTimeRange(data, filter).filter((item) =>
+    // Filter by Type field (Template, Test case)
+    const [typeFilter, setTypeFilter] = useState("");
+
+    // Apply time range filter first
+    let filtered = filterByTimeRange(data, filter);
+
+    // Apply Type filter if selected
+    if (typeFilter) {
+        filtered = filtered.filter(
+            (item) =>
+                item.Type && item.Type.toLowerCase() === typeFilter.toLowerCase()
+        );
+    }
+
+    // Apply search filter
+    filtered = filtered.filter((item) =>
         Object.values(item).some((val) =>
             val.toString().toLowerCase().includes(search.toLowerCase())
         )
     );
 
+    // Sorting
     const sorted = [...filtered].sort((a, b) => {
         if (!sortBy) return 0;
         return a[sortBy].localeCompare(b[sortBy]);
@@ -56,7 +77,7 @@ const Reports = () => {
 
     const exportCSV = () => {
         const headers = Object.keys(data[0]).join(",");
-        const rows = sorted.map(obj => Object.values(obj).join(",")).join("\n");
+        const rows = sorted.map((obj) => Object.values(obj).join(",")).join("\n");
         const csv = `${headers}\n${rows}`;
         const blob = new Blob([csv], { type: "text/csv" });
         const url = URL.createObjectURL(blob);
@@ -87,7 +108,7 @@ const Reports = () => {
                                 ))}
                             </div>
 
-                            <div className="filter-sort-wrapper">
+                            <div className="filter-sort-wrapper" style={{ position: "relative" }}>
                                 <button
                                     className="filter-sort-button"
                                     onClick={() => setShowFilterOptions(!showFilterOptions)}
@@ -98,6 +119,53 @@ const Reports = () => {
                                         <FaChevronDown className="icon" />
                                     </span>
                                 </button>
+
+                                {/* Filter Options Panel */}
+                                {showFilterOptions && (
+                                    <div
+                                        className="filter-options-dropdown"
+                                        style={{
+                                            position: "absolute",
+                                            top: "40px",
+                                            right: "0",
+                                            background: "#fff",
+                                            border: "1px solid #ddd",
+                                            borderRadius: "4px",
+                                            padding: "12px",
+                                            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                                            zIndex: 100,
+                                            minWidth: "180px",
+                                        }}
+                                    >
+                                        <label
+                                            htmlFor="typeFilter"
+                                            style={{ display: "block", marginBottom: "8px" }}
+                                        >
+                                            Type:
+                                        </label>
+                                        <select
+                                            id="typeFilter"
+                                            value={typeFilter}
+                                            onChange={(e) => setTypeFilter(e.target.value)}
+                                            style={{ width: "100%", padding: "6px" }}
+                                        >
+                                            <option value="">All</option>
+                                            <option value="Template">Template</option>
+                                            <option value="Test case">Test case</option>
+                                        </select>
+
+                                        <button
+                                            onClick={() => setShowFilterOptions(false)}
+                                            style={{
+                                                marginTop: "10px",
+                                                padding: "6px 12px",
+                                                cursor: "pointer",
+                                            }}
+                                        >
+                                            Close
+                                        </button>
+                                    </div>
+                                )}
 
                                 <button
                                     className="filter-sort-button"
@@ -130,7 +198,9 @@ const Reports = () => {
                         <thead>
                             <tr>
                                 {Object.keys(data[0]).map((key) => (
-                                    <th key={key} onClick={() => setSortBy(key)}>{key}</th>
+                                    <th key={key} onClick={() => setSortBy(key)}>
+                                        {key}
+                                    </th>
                                 ))}
                                 <th>Logs</th>
                             </tr>
