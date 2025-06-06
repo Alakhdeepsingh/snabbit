@@ -72,7 +72,11 @@ const Reports = () => {
     // Sorting
     const sorted = [...filtered].sort((a, b) => {
         if (!sortBy) return 0;
-        return a[sortBy].localeCompare(b[sortBy]);
+
+        // Handle possible undefined/null or non-string values safely
+        const valA = a[sortBy] ? a[sortBy].toString() : "";
+        const valB = b[sortBy] ? b[sortBy].toString() : "";
+        return valA.localeCompare(valB);
     });
 
     const exportCSV = () => {
@@ -93,6 +97,10 @@ const Reports = () => {
 
             <div className="reports-wrapper">
                 <div className="containers">
+                    <div className="sub-container">
+                        <div className="tab active">Hosts</div>
+                        <div className="tab">Projects</div>
+                    </div>
                     <div className="topbar">
                         <div className="host-heading">Hosts</div>
                         <div style={{ display: "flex", justifyContent: "space-between" }}>
@@ -177,6 +185,45 @@ const Reports = () => {
                                         <FaChevronDown className="icon" />
                                     </span>
                                 </button>
+
+                                {/* Sort Options Panel */}
+                                {showSortOptions && (
+                                    <div
+                                        className="sort-options-dropdown"
+                                        style={{
+                                            position: "absolute",
+                                            top: "40px",
+                                            right: "0",
+                                            background: "#fff",
+                                            border: "1px solid #ddd",
+                                            borderRadius: "4px",
+                                            padding: "12px",
+                                            boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                                            zIndex: 100,
+                                            minWidth: "180px",
+                                        }}
+                                    >
+                                        <div style={{ marginBottom: "8px", fontWeight: "bold" }}>
+                                            Sort By:
+                                        </div>
+                                        {Object.keys(data[0]).map((key) => (
+                                            <div
+                                                key={key}
+                                                style={{
+                                                    padding: "6px 8px",
+                                                    cursor: "pointer",
+                                                    backgroundColor: sortBy === key ? "#eee" : "transparent",
+                                                }}
+                                                onClick={() => {
+                                                    setSortBy(key);
+                                                    setShowSortOptions(false); // close dropdown after selecting
+                                                }}
+                                            >
+                                                {key}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             <div className="right-controls">
@@ -198,8 +245,14 @@ const Reports = () => {
                         <thead>
                             <tr>
                                 {Object.keys(data[0]).map((key) => (
-                                    <th key={key} onClick={() => setSortBy(key)}>
+                                    <th key={key} onClick={() => setSortBy(key)} style={{ cursor: "pointer" }}>
                                         {key}
+                                        {sortBy === key && (
+                                            <span style={{ marginLeft: "4px" }}>
+                                                { /* Simple up/down arrow depending on sort direction if needed */}
+                                                🔽
+                                            </span>
+                                        )}
                                     </th>
                                 ))}
                                 <th>Logs</th>
@@ -218,6 +271,26 @@ const Reports = () => {
                             ))}
                         </tbody>
                     </table>
+                    <div className="main-container">
+                        <div className="content">
+                            {/* Your main content will go here */}
+                        </div>
+                        <div className="arrow-container">
+                            <span className="arrow left-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </span>
+
+                            <span className="arrow right-arrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </span>
+
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </>

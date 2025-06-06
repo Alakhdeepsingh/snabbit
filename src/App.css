@@ -94,7 +94,7 @@
 }
 .search-box {
   padding: 5px 10px;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 .export-btn {
   padding: 5px 15px;
@@ -125,7 +125,7 @@
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 /* Content area below header */

@@ -11,6 +11,7 @@
   position: fixed;
   top: 0px;
   width: 100%;
+  z-index: 1000;
 }
 
 .header-left {
@@ -31,6 +32,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: 16px;
+  padding-right: 40px;
 }
 
 .logo {
