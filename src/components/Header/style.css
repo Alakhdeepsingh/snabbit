@@ -101,6 +101,8 @@
   border-radius: 4px;
   font-size: 12px;
   color: #ccc;
+  width: 22px;
+  height: 20px;
 }
 
 .header-icon {
@@ -120,14 +122,23 @@
 
 .badge {
   position: absolute;
-  top: 1px;
+  top: 0px;
   right: 1px;
   background-color: #f56565;
   color: white;
   font-size: 10px;
   border-radius: 9999px;
-  padding: 1px 5px;
+  padding: 0px 4px;
   font-weight: bold;
+}
+
+.search-texting {
+  font-family: Inter;
+  font-weight: 450;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #b5b5b5;
 }
 
 .user-info {

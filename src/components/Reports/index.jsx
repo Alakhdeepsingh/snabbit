@@ -240,7 +240,7 @@ const Reports = () => {
                                 />
                                 <button onClick={exportCSV} className="export-btn">
                                     {/* <HiOutlineDownload />  */}
-                                    <img src={ExportIcon} className="header-icon" alt="" />
+                                    <img src={ExportIcon} className="header-icon-export" alt="" />
 
                                     <span className="exported">Export</span>
                                 </button>
@@ -357,7 +357,7 @@ const Reports = () => {
                                         {/* <FaEye /> <FaRegCopy /> */}
                                         <img src={eyeIcon} className="" alt="hey" />
                                         {/* <img src="../file.png" className="" alt="hey" /> */}
-                                        <img src={fileIcon} alt="file icon" />
+                                        <img src={fileIcon} alt="file icon" className="linkedins" />
 
                                     </td>
                                 </tr>

@@ -64,7 +64,7 @@
   padding: 0px 10px 0px 30px; /* left padding for the icon */
   width: 100%;
   border-radius: 10px;
-  border: 1px solid #ccc !important;
+  border: 1px solid #8a8a8a !important;
   height: 30px;
   box-sizing: border-box;
 }
@@ -110,6 +110,7 @@
 }
 .search-box {
   padding: 5px 10px;
+  border: 1px solid #616161 !important;
   /* margin-left: auto; */
 }
 .export-btn {

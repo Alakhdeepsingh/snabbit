@@ -3,6 +3,7 @@ import { FaSearch, FaBell, FaCog, FaInfoCircle } from "react-icons/fa";
 import "./style.css";
 import HeaderIcon from "../../assets/headereye.png";
 import BellIcon from "../../assets/bell.png"
+import SearchHeader from "../../assets/searchheader.png"
 
 const Header = () => {
     return (
@@ -14,9 +15,9 @@ const Header = () => {
             <div className="header-center">
                 <div className="search-box">
                     {/* <FaSearch className="search-icon" /> */}
-                    <img src="../../assets/search.png" className="header-icon" alt="" />
+                    <img src={SearchHeader} className="header-icon" alt="" />
 
-                    <input type="text" placeholder="Search" />
+                    <input type="text" placeholder="Search" className="search-texting" />
                     <span className="shortcut">⌘K</span>
                 </div>
             </div>
