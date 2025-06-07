@@ -9,6 +9,10 @@ import {
 import { HiOutlineDownload } from "react-icons/hi";
 import "./style.css";
 import ReportsHeader from "../ReportHeader";
+import fileIcon from '../../assets/file.png'
+import eyeIcon from '../../assets/eye.png';
+import ExportIcon from "../../assets/export.png";
+import SearchIcon from "../../assets/searching.png"
 
 const tabs = ["Weekly", "Monthly", "Yearly", "Custom"];
 
@@ -97,12 +101,12 @@ const Reports = () => {
             <div className="reports-wrapper">
                 <div className="containers">
                     <div className="sub-container">
-                        <div className="tab active">Hosts</div>
-                        <div className="tab">Projects</div>
+                        <div className="linkedin active">Hosts</div>
+                        <div className="linkedin">Projects</div>
                     </div>
                     <div className="topbar">
                         <div className="host-heading">Hosts</div>
-                        <div style={{ display: "flex", justifyContent: "space-between" }}>
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "20px" }}>
                             <div className="tabs">
                                 {tabs.map((t) => (
                                     <button
@@ -226,6 +230,7 @@ const Reports = () => {
                             </div>
 
                             <div className="right-controls">
+                                <img src={SearchIcon} className="search-icon-report" alt="" />
                                 <input
                                     type="text"
                                     placeholder="Search"
@@ -235,7 +240,7 @@ const Reports = () => {
                                 />
                                 <button onClick={exportCSV} className="export-btn">
                                     {/* <HiOutlineDownload />  */}
-                                    <img src="../../assets/export.png" className="header-icon" alt="" />
+                                    <img src={ExportIcon} className="header-icon" alt="" />
 
                                     <span className="exported">Export</span>
                                 </button>
@@ -263,39 +268,125 @@ const Reports = () => {
                         </thead>
                         <tbody>
                             {sorted.map((row, i) => (
-                                <tr key={i}>
-                                    {Object.values(row).map((val, j) => (
-                                        <td key={j} className="values-icons">{val}</td>
+                                <tr key={i} style={{ height: "52px" }}>
+                                    {Object.entries(row).map(([key, val], j) => (
+                                        <td key={j} className="values-icons">
+                                            {key === "Execution State" ? (
+                                                <div style={{ display: "flex", alignItems: "center" }}>
+                                                    <div
+                                                        style={{
+                                                            width: "100px",
+                                                            height: "10px",
+                                                            backgroundColor: "#e0e0e0",
+                                                            borderRadius: "20px",
+                                                            overflow: "hidden",
+                                                        }}
+                                                    >
+                                                        <div
+                                                            style={{
+                                                                width: `${parseInt(val)}%`,
+                                                                height: "100%",
+                                                                borderRadius: "20px",
+                                                                backgroundColor:
+                                                                    parseInt(val) >= 80
+                                                                        ? "#00c853"
+                                                                        : parseInt(val) >= 50
+                                                                            ? "#ffd600"
+                                                                            : parseInt(val) >= 30
+                                                                                ? "#ff5252"
+                                                                                : "#ff8a80",
+                                                            }}
+                                                        ></div>
+                                                    </div>
+                                                    <span
+                                                        style={{
+                                                            marginLeft: "8px",
+                                                            fontFamily: "Inter",
+                                                            fontWeight: 400,
+                                                            fontSize: "14px",
+                                                            lineHeight: "22px",
+                                                            letterSpacing: "0%",
+                                                            verticalAlign: "middle",
+                                                        }}
+                                                    >
+                                                        {val}
+                                                    </span>
+
+                                                </div>
+                                            ) : key === "Executed by" ? (
+                                                <span
+                                                    style={{
+                                                        backgroundColor: "#EBEBEB",
+                                                        padding: "0px 10px",
+                                                        borderRadius: "20px",
+                                                        fontSize: "13px",
+                                                        display: "inline-block",
+                                                        color: "#333",
+                                                        fontWeight: 500,
+                                                    }}
+                                                >
+                                                    {val}
+                                                </span>
+                                            ) :
+                                                key === "Execution ID" ? (
+                                                    <span
+                                                        style={{
+                                                            fontFamily: "Inter",
+                                                            fontWeight: 450,
+                                                            fontSize: "13px",
+                                                            lineHeight: "20px",
+                                                            letterSpacing: "0px",
+                                                            textDecoration: "underline",
+                                                            textDecorationStyle: "solid",
+                                                            textDecorationOffset: "0%",
+                                                            textDecorationThickness: "0%",
+                                                            color: "#005BD3",
+                                                        }}
+
+                                                    >
+                                                        {val}
+                                                    </span>
+                                                ) :
+
+                                                    (
+                                                        val
+                                                    )}
+                                        </td>
                                     ))}
                                     <td className="log-icons">
-                                        <FaEye /> <FaRegCopy />
+                                        {/* <FaEye /> <FaRegCopy /> */}
+                                        <img src={eyeIcon} className="" alt="hey" />
+                                        {/* <img src="../file.png" className="" alt="hey" /> */}
+                                        <img src={fileIcon} alt="file icon" />
+
                                     </td>
                                 </tr>
                             ))}
                         </tbody>
+
                     </table>
-                    <div className="main-container">
-                        <div className="content">
-                            {/* Your main content will go here */}
-                        </div>
-                        <div className="arrow-container">
-                            <span className="arrow left-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </span>
-
-                            <span className="arrow right-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </span>
-
-                        </div>
-                    </div>
 
                 </div>
-            </div>
+                <div className="main-container">
+                    <div className="content">
+                        {/* Your main content will go here */}
+                    </div>
+                    <div className="arrow-container">
+                        <span className="arrow left-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </span>
+
+                        <span className="arrow right-arrow">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ color: "black" }}>
+                                <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </span>
+
+                    </div>
+                </div>
+            </div >
         </>
     );
 };

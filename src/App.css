@@ -45,12 +45,28 @@
   align-items: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
-.search-input {
-  padding: 5px 10px;
+.search-wrapper {
+  position: relative;
   width: 200px;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none; /* so it doesn't block input clicks */
+}
+
+.search-input {
+  padding: 0px 10px 0px 30px; /* left padding for the icon */
+  width: 100%;
   border-radius: 10px;
-  border: 1px solid #8a8a8a !important;
+  border: 1px solid #ccc !important;
   height: 30px;
+  box-sizing: border-box;
 }
 
 /* .header-right {
@@ -97,12 +113,14 @@
   /* margin-left: auto; */
 }
 .export-btn {
-  padding: 5px 15px;
+  padding: 5px 8px;
   background: #303030;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-left: 20px;
+  gap: 5px;
 }
 
 .reports-table {
@@ -117,6 +135,14 @@
 .reports-table th {
   background: #f5f5f5;
   cursor: pointer;
+  font-family: Inter;
+  font-weight: 550;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  height: 16px;
+  color: #616161;
 }
 .reports-table tr:hover {
   background: #f9f9f9;

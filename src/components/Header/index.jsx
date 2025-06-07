@@ -1,6 +1,8 @@
 import React from "react";
 import { FaSearch, FaBell, FaCog, FaInfoCircle } from "react-icons/fa";
 import "./style.css";
+import HeaderIcon from "../../assets/headereye.png";
+import BellIcon from "../../assets/bell.png"
 
 const Header = () => {
     return (
@@ -22,11 +24,11 @@ const Header = () => {
             <div className="header-right">
                 <div className="circle-icon">
                     {/* <FaInfoCircle className="header-icon" /> */}
-                    <img src="../../assets/Icon.png" className="header-icon" alt="" />
+                    <img src={HeaderIcon} className="header-icon" alt="" />
                 </div>
                 <div className="notification-icon">
                     {/* <FaBell /> */}
-                    <img src="../../assets/bell.png" className="header-icon" alt="" />
+                    <img src={BellIcon} className="header-icon" alt="" />
 
                     <span className="badge">2</span>
                 </div>

@@ -30,6 +30,11 @@
   height: 20px;
 }
 
+.sidebar-logos {
+  width: 20px;
+  height: 20px;
+}
+
 .menu li {
   padding: 8px 12px;
   cursor: pointer;
