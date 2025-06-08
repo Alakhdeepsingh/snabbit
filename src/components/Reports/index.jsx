@@ -46,7 +46,7 @@ const filterByTimeRange = (items, filterType) => {
 };
 
 const Reports = () => {
-    const [filter, setFilter] = useState("Weekly");
+    const [filter, setFilter] = useState("Custom");
     const [search, setSearch] = useState("");
     const [sortBy, setSortBy] = useState(null);
     const [showFilterOptions, setShowFilterOptions] = useState(false);
@@ -301,7 +301,7 @@ const Reports = () => {
                                                     <span
                                                         style={{
                                                             marginLeft: "8px",
-                                                            fontFamily: "Inter",
+                                                            fontFamily: "sans-serif",
                                                             fontWeight: 400,
                                                             fontSize: "14px",
                                                             lineHeight: "22px",
@@ -331,7 +331,7 @@ const Reports = () => {
                                                 key === "Execution ID" ? (
                                                     <span
                                                         style={{
-                                                            fontFamily: "Inter",
+                                                            fontFamily: "sans-serif",
                                                             fontWeight: 450,
                                                             fontSize: "13px",
                                                             lineHeight: "20px",
